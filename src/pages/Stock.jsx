@@ -2,6 +2,7 @@ import { useState } from "react";
 import StockForm from "../components/StockForm";
 import InventarioLista from "../components/InventarioLista";
 import Buscador from "../components/Buscador";
+import TotalInventario from "../components/TotalInventario";
 
 export default function Stock() {
     const [stock, setStock] = useState({
@@ -123,8 +124,9 @@ export default function Stock() {
 
             <Buscador busqueda={busqueda} manejarBusqueda={manejarBusqueda} />
 
+            <TotalInventario inventario={inventario} />
+
             <InventarioLista inventario={inventarioFiltrado}
-                totalProductos={inventario.length}
                 borrarProducto={borrarProducto}
                 modificarProducto={modificarProducto}
                 editandoId={editandoId}

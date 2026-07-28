@@ -1,5 +1,3 @@
-
-
 export default function Buscador({ busqueda, manejarBusqueda }) {
     return (
         <div>

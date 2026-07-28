@@ -12,7 +12,6 @@ export default function InventarioLista({
 }) {
     return (
         <ul>
-            <p>Total de productos: {totalProductos}</p>
             <p>Resultados: {inventario.length}</p>
 
             {inventario.length === 0 ? (

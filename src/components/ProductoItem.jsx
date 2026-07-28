@@ -11,6 +11,7 @@ export default function ProductoItem({
     const estaEditando = editandoId === item.id;
 
     return (
+        
         <li>
             {estaEditando ? (
                 <>
@@ -39,10 +40,12 @@ export default function ProductoItem({
             ) : (
                 <>
                     {item.id} - {item.nombre} - ${item.precio.toFixed(2)} - {item.cantidad}
+                    {item.cantidad < 5 && (<span style={{ color: "orange", marginLeft: 8 }}>⚠ Stock bajo</span>)}
                     <button onClick={() => borrarProducto(item.id)}>Borrar</button>
                     <button onClick={() => modificarProducto(item.id)}>Modificar</button>
                 </>
             )}
         </li>
+        
     );
 }
