@@ -1,6 +1,7 @@
 import { useState } from "react";
 import StockForm from "../components/StockForm";
 import InventarioLista from "../components/InventarioLista";
+import Buscador from "../components/Buscador";
 
 export default function Stock() {
     const [stock, setStock] = useState({
@@ -10,6 +11,7 @@ export default function Stock() {
     });
 
     const [inventario, setInventario] = useState([]);
+    const [busqueda, setBusqueda] = useState("");
     const [editandoId, setEditandoId] = useState(null);
     const [productoEditando, setProductoEditando] = useState({
         nombre: "",
@@ -101,6 +103,14 @@ export default function Stock() {
         setProductoEditando({ nombre: "", precio: "", cantidad: "" });
     };
 
+    const manejarBusqueda = (event) => {
+        setBusqueda(event.target.value);
+    };
+
+    const inventarioFiltrado = inventario.filter((item) =>
+        item.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    );
+
     const borrarProducto = (idProduct) => {
         setInventario((prevInventario) => prevInventario.filter((item) => item.id !== idProduct));
     };
@@ -111,7 +121,10 @@ export default function Stock() {
                 getStock={getStock}
                 cargarStock={cargarStock} />
 
-            <InventarioLista inventario={inventario}
+            <Buscador busqueda={busqueda} manejarBusqueda={manejarBusqueda} />
+
+            <InventarioLista inventario={inventarioFiltrado}
+                totalProductos={inventario.length}
                 borrarProducto={borrarProducto}
                 modificarProducto={modificarProducto}
                 editandoId={editandoId}
@@ -119,6 +132,7 @@ export default function Stock() {
                 manejarCambioEdicion={manejarCambioEdicion}
                 guardarEdicion={guardarEdicion}
                 cancelarEdicion={cancelarEdicion} />
+                
         </>
     );
 }

@@ -12,7 +12,8 @@ export default function InventarioLista({
 }) {
     return (
         <ul>
-            <p>Hay {inventario.length} Productos cargados</p>
+            <p>Total de productos: {totalProductos}</p>
+            <p>Resultados: {inventario.length}</p>
 
             {inventario.length === 0 ? (
                 <p>Sin productos en el Inventario</p>
