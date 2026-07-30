@@ -1,0 +1,21 @@
+:root {
+    font-size: 35px;
+}
+
+.navBar {
+  margin: 0px;
+  background-color: blue;
+}
+
+.linkInventario {
+    color: #0C0908;
+    font-size: 25px;
+    margin: 15px;
+}
+
+.linkCargar {
+    color: #0C0908;
+    font-size: 25px;
+    margin: 15px;
+
+}

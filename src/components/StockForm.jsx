@@ -1,3 +1,5 @@
+import styles from "../styles/StockForm.module.css";
+
 // export default function StockForm({
 //   stock = { nombre: '', precio: '', cantidad: '' },
 //   getStock = () => {},
@@ -6,41 +8,57 @@
 
 export default function StockForm({stock, getStock, cargarStock }) {
     return (
-        <>
-            <p>Ingresa el nombre del producto:</p>
-            <input
-                type="text"
-                name="nombre"
-                placeholder="producto"
-                value={stock.nombre}
-                onChange={getStock}
-            />
-            <br />
+        //{styles["formulario-carga"]} sirve cuando el nombre tiene guiones, espacios o cualquier cosa que no sea un identificador válido
+        <div className={styles["formulario-carga"]}>  
 
-            <p>Ingresa el precio:</p>
-            <input
-                type="text"
-                name="precio"
-                placeholder="0.00"
-                value={stock.precio}
-                onChange={getStock}
-            />
-            <br />
+            <div className={styles.campo}>
+                <label className={styles.label}>
+                Ingresa el Producto: 
+                <input
+                    className={styles.input}
+                    type="text"
+                    name="nombre"
+                    placeholder="producto"
+                    value={stock.nombre}
+                    onChange={getStock}
+                />
+                </label>
+            </div>
 
-            <p>Ingresa la cantidad:</p>
-            <input
-                type="text"
-                name="cantidad"
-                placeholder="unidades"
-                value={stock.cantidad}
-                onChange={getStock}
-                onKeyDown={(e) => e.key === "Enter" && cargarStock()}
-            />
-            <br />
-            <br />
 
-            <button onClick={cargarStock}>Cargar</button>
+            <div className={styles.campo}>
+                <label className={styles.label}>
+                Ingresa el Precio:  
+                <input
+                    className={styles.input}
+                    type="text"
+                    name="precio"
+                    placeholder="0.00"
+                    value={stock.precio}
+                    onChange={getStock}
+                />
+                </label>
+            </div>
+            
+
+            <div className={styles.campo}>
+                <label className={styles.label}>
+                Ingresa la Cantidad: 
+                <input
+                    className={styles.input}
+                    type="text"
+                    name="cantidad"
+                    placeholder="unidades"
+                    value={stock.cantidad}
+                    onChange={getStock}
+                    onKeyDown={(e) => e.key === "Enter" && cargarStock()}
+                />
+                </label>
+            </div>
+            <br/>
+
+            <button onClick={cargarStock} className={styles.botonCargar}> Cargar </button>
             <hr />
-        </>
+        </div>
     );
 }
