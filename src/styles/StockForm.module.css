@@ -46,6 +46,8 @@
     transform: scale(1.10);
 }
 
+
+
 /*Propiedad: Qué quieres animar (ej: background-color, transform, all si quieres animar todo lo que cambie).
 
 Duración: Cuánto tiempo tarda la animación. Se mide en segundos (s) o milisegundos (ms). Un estándar cómodo es 0.3s.

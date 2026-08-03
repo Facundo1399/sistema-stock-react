@@ -11,11 +11,24 @@
     color: #0C0908;
     font-size: 25px;
     margin: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .linkCargar {
     color: #0C0908;
     font-size: 25px;
     margin: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+.linkCargar:hover  {
+    color: rgb(248, 249, 250);
+    transform: scale(1.03);
+}
+
+.linkInventario:hover{
+    color: rgb(248, 249, 250);
+    transform: scale(1.03);
 }

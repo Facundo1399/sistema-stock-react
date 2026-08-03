@@ -20,7 +20,7 @@ export default function Stock({
 
   return (
     <div>
-      <h1>Inventario</h1>
+      <h1 style={{color:'#000302', backgroundColor:'#6FA8DC', fontSize:'25px', margin:0}}>Inventario</h1>
       <Buscador busqueda={busqueda} manejarBusqueda={manejarBusqueda} />
       <TotalInventario inventario={inventario} />
       <InventarioLista
